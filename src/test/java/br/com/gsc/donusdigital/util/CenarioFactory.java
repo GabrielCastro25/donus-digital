@@ -2,6 +2,7 @@ package br.com.gsc.donusdigital.util;
 
 import br.com.gsc.donusdigital.dto.ClienteDTO;
 import br.com.gsc.donusdigital.dto.ContaDTO;
+import br.com.gsc.donusdigital.dto.ContaHistoricoDTO;
 import br.com.gsc.donusdigital.dto.OperacaoDTO;
 import br.com.gsc.donusdigital.dto.TransferenciaDTO;
 import br.com.gsc.donusdigital.model.Cliente;
@@ -55,6 +56,24 @@ public class CenarioFactory {
     public static TransferenciaDTO getTransferencia() {
         return TransferenciaDTO.builder().valor(new BigDecimal(100)).numeroConta(65l)
                 .contaDestino(564l).cpfTitular("052.145.581-20").build();
+    }
+
+    public static ContaHistoricoDTO getHistoricoDTO() {
+        return ContaHistoricoDTO.builder().dataAcao(LocalDateTime.MAX).descricao("TESTE")
+                .taxa(BigDecimal.ONE).valor(BigDecimal.ONE).build();
+    }
+
+    public static Page<ContaHistoricoDTO> getPaginacaoHistoricoDTO() {
+        return new PageImpl<ContaHistoricoDTO>(List.of(getHistoricoDTO()));
+    }
+
+    public static ClienteDTO getClienteDTOExistente() {
+        return ClienteDTO.builder().cpf("960.269.278-24").nome("CLIENTE TESTE").build();
+    }
+
+    public static TransferenciaDTO getTransferenciaDTOValido() {
+        return TransferenciaDTO.builder().valor(new BigDecimal(100))
+                .contaDestino(1l).cpfTitular("960.269.278-24").build();
     }
 
 }

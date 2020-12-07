@@ -7,7 +7,7 @@ criei a estrutura numa arquitetura de interfaces facilitando a implementação d
 ## Pré-requisitos
 - Instalar [Java 11 SDK ](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
 - Instalar [Maven3+](https://maven.apache.org/download.cgi)
-- Banco de dados - Optei por H2, pois o intuito e mostrar o conhecimento com a linguagem
+- Banco de dados - Optei por H2, pois o intuito é mostrar o conhecimento com a linguagem
 
 ## Rodar 
 

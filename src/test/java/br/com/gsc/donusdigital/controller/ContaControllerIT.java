@@ -30,7 +30,7 @@ public class ContaControllerIT extends ControllerBaseIT {
                 .contentType("application/json")
                 .body(clienteDTO)
                 .when()
-                .post("v1/contas")
+                .post("api/v1/contas")
                 .then()
                 .statusCode(HttpStatus.BAD_REQUEST.value())
                 .contentType("application/json").extract()
@@ -51,7 +51,7 @@ public class ContaControllerIT extends ControllerBaseIT {
                 .contentType("application/json")
                 .body(clienteDTO)
                 .when()
-                .post("v1/contas")
+                .post("api/v1/contas")
                 .then()
                 .statusCode(HttpStatus.BAD_REQUEST.value())
                 .contentType("application/json").extract()
@@ -72,7 +72,7 @@ public class ContaControllerIT extends ControllerBaseIT {
                 .contentType("application/json")
                 .body(clienteDTO)
                 .when()
-                .post("v1/contas")
+                .post("api/v1/contas")
                 .then()
                 .statusCode(HttpStatus.CREATED.value())
                 .contentType("application/json").extract()
@@ -98,15 +98,16 @@ public class ContaControllerIT extends ControllerBaseIT {
     }
 
     private ContaDTO obterConta(long numeroConta) {
-        return given()
+        final var contaDTO = given()
                 .contentType("application/json")
                 .when()
-                .get("v1/contas/"+ numeroConta)
+                .get("api/v1/contas/"+ numeroConta)
                 .then()
                 .statusCode(HttpStatus.OK.value())
                 .contentType("application/json").extract()
                 .body()
                 .as(ContaDTO.class);
+        return contaDTO;
     }
 
     @Test
@@ -118,7 +119,7 @@ public class ContaControllerIT extends ControllerBaseIT {
         final var erroDTO = given()
                 .contentType("application/json")
                 .when()
-                .get("v1/contas/"+numeroConta)
+                .get("api/v1/contas/"+numeroConta)
                 .then()
                 .statusCode(HttpStatus.NOT_FOUND.value())
                 .contentType("application/json").extract()
@@ -142,7 +143,7 @@ public class ContaControllerIT extends ControllerBaseIT {
                 .contentType("application/json")
                 .body(operacao)
                 .when()
-                .patch("v1/contas/"+numeroConta+"/depositos")
+                .patch("api/v1/contas/"+numeroConta+"/depositos")
                 .then()
                 .statusCode(HttpStatus.NO_CONTENT.value());
 
@@ -162,7 +163,7 @@ public class ContaControllerIT extends ControllerBaseIT {
                 .contentType("application/json")
                 .body(operacao)
                 .when()
-                .patch("v1/contas/"+numeroConta+"/saques")
+                .patch("api/v1/contas/"+numeroConta+"/saques")
                 .then()
                 .statusCode(HttpStatus.BAD_REQUEST.value())
                 .contentType("application/json").extract()
@@ -186,7 +187,7 @@ public class ContaControllerIT extends ControllerBaseIT {
                 .contentType("application/json")
                 .body(operacao)
                 .when()
-                .patch("v1/contas/"+numeroConta+"/saques")
+                .patch("api/v1/contas/"+numeroConta+"/saques")
                 .then()
                 .statusCode(HttpStatus.NO_CONTENT.value());
 
@@ -206,7 +207,7 @@ public class ContaControllerIT extends ControllerBaseIT {
                 .contentType("application/json")
                 .body(transferencia)
                 .when()
-                .patch("v1/contas/"+numeroConta+"/transferencias")
+                .patch("api/v1/contas/"+numeroConta+"/transferencias")
                 .then()
                 .statusCode(HttpStatus.NO_CONTENT.value());
 
@@ -229,7 +230,7 @@ public class ContaControllerIT extends ControllerBaseIT {
                 .contentType("application/json")
                 .body(transferencia)
                 .when()
-                .patch("v1/contas/"+numeroConta+"/transferencias")
+                .patch("api/v1/contas/"+numeroConta+"/transferencias")
                 .then()
                 .statusCode(HttpStatus.NOT_FOUND.value())
                 .contentType("application/json").extract()

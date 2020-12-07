@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("v1/contas")
+@RequestMapping("api/v1/contas")
 public class ContaController {
 
     @Autowired

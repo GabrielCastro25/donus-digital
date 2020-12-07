@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.time.LocalDate;
 
 @RestController
-@RequestMapping("v1/transacoes")
+@RequestMapping("api/v1/transacoes")
 public class ContaHistoricoController {
 
     @Autowired

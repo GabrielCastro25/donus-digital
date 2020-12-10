@@ -11,8 +11,12 @@ criei a estrutura numa arquitetura de interfaces facilitando a implementação d
 
 ## Rodar 
 
-1. Buildar o projeto:  
+1. Buildar o projeto (Caso a JDK 11 seja a HOME da sua máquina):  
 `mvn clean verify`
+
+1.1 - Caso a JDK 11 não seja a padrão, rode o projeto assim:
+`JAVA_HOME={path JDK 11} mvn clean install`
+Ex: `JAVA_HOME=/Users/gabrielcastro/conf_devs/desenvolvimento/jdks/jdk-11.0.7.jdk/Contents/Home/bin/java mvn clean install`
 
 2. Após isso, digite o comando:  
 `cd target/`

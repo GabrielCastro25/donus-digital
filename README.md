@@ -17,8 +17,13 @@ criei a estrutura numa arquitetura de interfaces facilitando a implementação d
 2. Após isso, digite o comando:  
 `cd target/`
 
-3. Execute o projeto com o comando:  
+3. Execute o projeto com o comando (caso o java home seja a versão 11 padrão):  
 `java -jar donus-digital-1.0.0.jar`
+
+3.1 Caso você já tenha uma outra JDK como padrão, procure onde esteja path da JDK 11 e rode assim:
+`<path_to_jdk11>/bin/java -jar donus-digital-1.0.0.jar`
+
+Ex: `/Users/gabrielcastro/conf_devs/desenvolvimento/jdks/jdk-11.0.7.jdk/Contents/Home/bin/java -jar donus-digital-1.0.0.jar `
 
 ## Endpoints disponíveis
 

@@ -15,7 +15,9 @@ criei a estrutura numa arquitetura de interfaces facilitando a implementação d
 `mvn clean verify`
 
 1.1 - Caso a JDK 11 não seja a padrão, rode o projeto assim:
+
 `JAVA_HOME={path JDK 11} mvn clean install`
+
 Ex: `JAVA_HOME=/Users/gabrielcastro/conf_devs/desenvolvimento/jdks/jdk-11.0.7.jdk/Contents/Home/bin/java mvn clean install`
 
 2. Após isso, digite o comando:  
@@ -25,6 +27,7 @@ Ex: `JAVA_HOME=/Users/gabrielcastro/conf_devs/desenvolvimento/jdks/jdk-11.0.7.jd
 `java -jar donus-digital-1.0.0.jar`
 
 3.1 Caso você já tenha uma outra JDK como padrão, procure onde esteja path da JDK 11 e rode assim:
+
 `<path_to_jdk11>/bin/java -jar donus-digital-1.0.0.jar`
 
 Ex: `/Users/gabrielcastro/conf_devs/desenvolvimento/jdks/jdk-11.0.7.jdk/Contents/Home/bin/java -jar donus-digital-1.0.0.jar `

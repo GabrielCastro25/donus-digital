@@ -1,0 +1,39 @@
+<FindBugsFilter>
+
+  <!-- Match all DLS_DEAD_LOCAL_STORE violations. As per FindBugs
+      documentation these generate numerous false positives under Sun/Oracle
+      compilers.
+
+      http://findbugs.sourceforge.net/bugDescriptions.html#DLS_DEAD_LOCAL_STORE
+  -->
+  <Match>
+    <Bug pattern="DLS_DEAD_LOCAL_STORE"/>
+  </Match>
+
+  <!-- Match all RV_RETURN_VALUE_IGNORED_BAD_PRACTICE violations on all unit
+     and integration test classes and nested inner classes since Mockito usage
+     can cause this violation when stating expectations.
+  -->
+  <Match>
+    <Or>
+      <Bug pattern="RV_RETURN_VALUE_IGNORED_NO_SIDE_EFFECT"/>
+      <Bug pattern="RV_RETURN_VALUE_IGNORED_BAD_PRACTICE"/>
+      <Bug pattern="RR_NOT_CHECKED"/>
+      <Bug pattern="SR_NOT_CHECKED"/>
+    </Or>
+    <Or>
+      <Class name="~.*\.[^\.]+Test"/>
+      <Class name="~.*\.[^\.]+Test\$.*"/>
+      <Class name="~.*\.[^\.]+IT"/>
+      <Class name="~.*\.[^\.]+IT\$.*"/>
+      <Class name="~.*\.[^\.]+DTO"/>
+    </Or>
+  </Match>
+
+  <Match>
+    <Or>
+      <Class name="~.*?\.Immutable.*"/>
+    </Or>
+  </Match>
+
+</FindBugsFilter>
